@@ -30,21 +30,21 @@ public:
 class anotherSolution{
 public:
     vector<int> twoSum(vector<int>& nums, int target) 
-	  {
-        map <int,int> myMap;
+    {
+		map <int,int> myMap;
         map<int,int>::iterator ite;
         vector<int> ans;
         myMap.insert(pair<int,int>(target - nums[0],0));
         
         for (int i = 1;i<nums.size();i++)
-		    {
+		{
             ite = myMap.find(nums[i]);
             if(ite!=myMap.end())
-			      {
+			{
                 ans.push_back(ite->second);
                 ans.push_back(i);
                 return ans;
-            }
+			}
             myMap.insert(pair<int,int>(target - nums[i],i));
         }
         return ans;
@@ -53,11 +53,11 @@ public:
 
 int main()
 {
-	int myarray[] = {2,7, 11, 15};
+	int myarray[] = {3, 2, 4};
 	vector<int> foo (myarray, myarray + sizeof(myarray) / sizeof(int) );
 	
 	anotherSolution a;
-	vector<int> res = a.twoSum(foo, 9);
+	vector<int> res = a.twoSum(foo, 6);
 	
 	for (unsigned int i = 0; i < res.size(); i++) 
 	{
